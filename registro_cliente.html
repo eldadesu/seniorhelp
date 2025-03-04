@@ -3,83 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SeniorHelp - Conecta con Expertos</title>
+    <title>Registro como Contratante - SeniorHelp</title>
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; }
         header { background: #3498DB; color: white; padding: 20px; text-align: center; }
-        nav { display: flex; justify-content: center; gap: 20px; padding: 10px; background: #2C3E50; }
-        nav a { color: white; text-decoration: none; padding: 5px 10px; }
-        nav a:hover { background: #1A252F; border-radius: 5px; }
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        .section { margin-bottom: 40px; }
+        .container { max-width: 800px; margin: auto; padding: 20px; }
+        label { display: block; margin-top: 10px; }
+        input, textarea { width: 100%; padding: 8px; margin: 8px 0; }
         .button { display: inline-block; padding: 10px 20px; color: white; background: #3498DB; text-decoration: none; border-radius: 5px; cursor: pointer; }
         .button:hover { background: #2980B9; }
-        input, select, textarea { width: 100%; padding: 8px; margin: 8px 0; }
-        .hero { position: relative; text-align: center; color: white; }
-        .hero img { width: 100%; height: auto; display: block; }
-        .hero-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-        .hero h1 { font-size: 3rem; margin: 0; }
-        .hero p { font-size: 1.2rem; margin: 10px 0; }
     </style>
 </head>
 <body>
     <header>
-        <h1>SeniorHelp</h1>
-        <p>Conecta con personas mayores expertas en oficios prácticos, asesorías personalizadas y consejos de vida.</p>
+        <h1>Registro como Contratante</h1>
+        <p>Encuentra expertos senior para tus necesidades específicas.</p>
     </header>
 
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="registro.html">Regístrate como Experto</a>
-        <a href="registro_cliente.html">Regístrate como Contratante</a>
-        <a href="especialidades.html">Buscar Especialidades</a>
-    </nav>
-
-    <!-- Sección Hero (Portada) -->
-    <div class="hero">
-        <img src="img/portada.jpg" alt="Portada SeniorHelp">
-        <div class="hero-text">
-            <h1>Conecta con Expertos Senior</h1>
-            <p>Experiencia a tu alcance en cada llamada o proyecto.</p>
-            <a href="registro.html" class="button">Únete como Experto</a>
-        </div>
-    </div>
-
     <div class="container">
-        <section class="section">
-            <h2>🌟 ¿Cómo Funciona?</h2>
-            <p><strong>Para Clientes:</strong> Encuentra asesorías rápidas de expertos en diferentes áreas y paga por minuto u hora.</p>
-            <p><strong>Para Empresas:</strong> Contrata talento senior para proyectos específicos o colaboraciones a largo plazo.</p>
-            <p><strong>Regulación de Comportamiento y Pagos:</strong> Los clientes deben tratar a los expertos con respeto en todo momento. Los pagos se realizan por adelantado y se retienen hasta que ambas partes confirmen la finalización del servicio.</p>
-        </section>
+        <h2>Completa el formulario para registrarte</h2>
+        <form action="procesar_registro_cliente.html" method="POST">
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" required>
 
-        <section class="section">
-            <h2>👨‍🏫 Únete como Experto</h2>
-            <p>Si tienes experiencia en un área específica y deseas ofrecer tus servicios, ¡únete a SeniorHelp y comparte tu conocimiento!</p>
-            <a href="registro.html" class="button">Registrarse como Experto</a>
-        </section>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
 
-        <section class="section">
-            <h2>🤝 Regístrate como Contratante</h2>
-            <p>Si buscas asesorías o necesitas contratar talento senior, ¡regístrate y encuentra el experto ideal para tus necesidades!</p>
-            <a href="registro_cliente.html" class="button">Registrarse como Contratante</a>
-        </section>
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
 
-        <section class="section">
-            <h2>🔍 Buscar Especialidades</h2>
-            <p>Encuentra expertos en diferentes áreas buscando por especialidad:</p>
-            <input type="text" placeholder="Buscar por especialidad..." id="searchInput">
-            <button class="button" onclick="searchSpecialties()">Buscar</button>
-        </section>
+            <label for="empresa">Nombre de la empresa (opcional):</label>
+            <input type="text" id="empresa" name="empresa">
 
+            <label for="necesidades">¿Qué tipo de asesoría o servicio necesitas?</label>
+            <textarea id="necesidades" name="necesidades" rows="4" required></textarea>
+
+            <button type="submit" class="button">Enviar Registro</button>
+        </form>
     </div>
-
-    <script>
-        function searchSpecialties() {
-            const query = document.getElementById('searchInput').value;
-            alert('Buscando: ' + query);
-            // Aquí puedes agregar lógica para realizar la búsqueda en el futuro.
-        }
-    </script>
 </body>
 </html>
