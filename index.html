@@ -3,37 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SeniorHelp - Expertos a tu alcance</title>
+    <title>SeniorHelp - Conecta con Expertos</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #f9f9f9;
-            color: #2C3E50;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-        }
-        .section {
-            margin-bottom: 40px;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            color: white;
-            background: #3498DB;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .button:hover {
-            background: #2980B9;
-        }
-        h1, h2 {
-            color: #2C3E50;
-        }
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1, h2 { color: #2C3E50; }
+        .container { max-width: 800px; margin: auto; }
+        .section { margin-bottom: 40px; }
+        .button { display: inline-block; padding: 10px 20px; color: white; background: #3498DB; text-decoration: none; border-radius: 5px; cursor: pointer; }
+        .button:hover { background: #2980B9; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }
+        .modal-content { background: white; padding: 20px; max-width: 500px; margin: 10% auto; border-radius: 10px; }
+        .close { float: right; cursor: pointer; }
+        input, select { width: 100%; padding: 8px; margin: 8px 0; }
     </style>
 </head>
 <body>
@@ -44,29 +25,85 @@
         </header>
 
         <section class="section">
-            <h2>🚀 ¿Cómo Funciona?</h2>
+            <h2>🌟 ¿Cómo Funciona?</h2>
             <p><strong>Para Clientes:</strong> Encuentra asesorías rápidas de expertos en diferentes áreas y paga por minuto u hora.</p>
             <p><strong>Para Empresas:</strong> Contrata talento senior para proyectos específicos o colaboraciones a largo plazo.</p>
-            <p><strong>Regulación de Comportamiento y Pagos:</strong><br>
-            Los clientes deben tratar a los expertos con respeto en todo momento. Los pagos se realizan por adelantado y se retienen hasta que ambas partes confirmen la finalización del servicio.</p>
+            <p><strong>Regulación de Comportamiento y Pagos:</strong> Los clientes deben tratar a los expertos con respeto en todo momento. Los pagos se realizan por adelantado y se retienen hasta que ambas partes confirmen la finalización del servicio.</p>
         </section>
 
         <section class="section">
-            <h2>📚 Áreas de Experiencia</h2>
-            <ul>
-                <li>Asesorías legales básicas</li>
-                <li>Consultoría financiera</li>
-                <li>Reparaciones del hogar</li>
-                <li>Consejería de vida y bienestar</li>
-                <li>Mentoría empresarial</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>🌟 Únete a SeniorHelp</h2>
-            <p>¿Eres un experto con años de experiencia? ¡Regístrate y ofrece tus servicios a quienes más lo necesitan!</p>
-            <a href="#" class="button">Regístrate como Experto</a>
+            <h2>👨‍🏫 Únete como Experto</h2>
+            <p>Si tienes experiencia en un área específica y deseas ofrecer tus servicios, ¡únete a SeniorHelp y comparte tu conocimiento!</p>
+            <button class="button" id="openModal">Registrarse como Experto</button>
         </section>
     </div>
+
+    <!-- Modal de Registro -->
+    <div class="modal" id="expertModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Registro de Experto Senior</h2>
+            <form id="expertForm">
+                <label for="name">Nombre completo:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="age">Edad (mínimo 55 años):</label>
+                <input type="number" id="age" name="age" min="55" required>
+
+                <label for="gender">Género:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Seleccione</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro</option>
+                </select>
+
+                <label for="residence">Estado de Residencia:</label>
+                <input type="text" id="residence" name="residence" required>
+
+                <label for="city">Ciudad:</label>
+                <input type="text" id="city" name="city" required>
+
+                <label for="expertise">Área de experiencia:</label>
+                <input type="text" id="expertise" name="expertise" required>
+
+                <label for="id">Número de identificación (INE/Pasaporte):</label>
+                <input type="text" id="id" name="id" required>
+
+                <label>
+                    <input type="checkbox" id="authenticity" required>
+                    Confirmo que los datos proporcionados son auténticos.
+                </label>
+
+                <button type="submit" class="button">Enviar Registro</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const openModal = document.getElementById('openModal');
+        const closeModal = document.getElementById('closeModal');
+        const modal = document.getElementById('expertModal');
+
+        openModal.addEventListener('click', () => {
+            modal.style.display = 'block';
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        document.getElementById('expertForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+            alert('Registro enviado con éxito.');
+            modal.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
