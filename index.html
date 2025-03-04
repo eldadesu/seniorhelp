@@ -33,6 +33,28 @@
             text-decoration: none;
             font-weight: bold;
         }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #34495e;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: white;
+            text-decoration: none;
+        }
+        .dropdown-content a:hover {
+            background: #1e73be;
+        }
         .portada {
             position: relative;
             width: 100vw;
@@ -120,6 +142,16 @@
             <a href="#">Inicio</a>
             <a href="#">Regístrate como Experto</a>
             <a href="#">Buscar Especialidades</a>
+            <div class="dropdown">
+                <a href="#">Servicios</a>
+                <div class="dropdown-content">
+                    <a href="#">Servicios financieros</a>
+                    <a href="#">Consejos familiares</a>
+                    <a href="#">Cocina y tradiciones</a>
+                    <a href="#">Oficios senior</a>
+                    <a href="#">Otro</a>
+                </div>
+            </div>
         </nav>
     </div>
 
