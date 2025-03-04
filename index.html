@@ -1,75 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SeniorHelp - Conecta con Expertos Senior</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-
-        .banner {
-            background: url('img/banner.jpg') no-repeat center/cover;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
-
-        .contenido {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .portada {
-            width: 100%;
-            max-width: 800px;
-            display: block;
-            margin: 20px auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .servicios a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #0077cc;
-            font-weight: bold;
-        }
-    </style>
+    <title>SeniorHelp - Inicio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <!-- Banner principal -->
-    <div class="banner">
+    <!-- Banner -->
+    <header class="banner">
         <h1>Bienvenido a SeniorHelp</h1>
-    </div>
-
-    <!-- Contenido principal -->
-    <div class="contenido">
         <p>Conecta con personas mayores expertas en oficios prácticos, asesorías personalizadas y consejos de vida.</p>
+    </header>
 
-        <!-- Imagen de portada -->
-        <img src="img/portada.jpg" alt="Imagen de portada" class="portada">
+    <!-- Portada -->
+    <section class="portada">
+        <img src="img/portada.jpg" alt="Imagen de portada">
+    </section>
 
-        <!-- Servicios disponibles -->
+    <!-- Sección de servicios -->
+    <section class="servicios">
         <h2>Explora los servicios disponibles:</h2>
-        <div class="servicios">
-            <a href="#">Servicios financieros</a>
-            <a href="#">Consejos familiares</a>
-            <a href="#">Cocina y tradiciones</a>
-            <a href="#">Oficios senior</a>
-            <a href="#">Otro</a>
+        <ul>
+            <li><a href="#">Servicios financieros</a></li>
+            <li><a href="#">Consejos familiares</a></li>
+            <li><a href="#">Cocina y tradiciones</a></li>
+            <li><a href="#">Oficios senior</a></li>
+            <li><a href="#">Otro</a></li>
+        </ul>
+    </section>
+
+    <!-- Footer similar al ejemplo -->
+    <footer class="footer">
+        <div class="footer-column">
+            <h3>Categorías</h3>
+            <ul>
+                <li>Servicios financieros</li>
+                <li>Consejos familiares</li>
+                <li>Cocina y tradiciones</li>
+                <li>Oficios senior</li>
+                <li>Otro</li>
+            </ul>
         </div>
-    </div>
 
+        <div class="footer-column">
+            <h3>Para los clientes</h3>
+            <ul>
+                <li>Cómo funciona SeniorHelp</li>
+                <li>Historias de éxito</li>
+                <li>Confianza y seguridad</li>
+                <li>Guías de uso</li>
+                <li>Soporte</li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Para expertos</h3>
+            <ul>
+                <li>Únete como experto</li>
+                <li>Programa de apoyo</li>
+                <li>Centro de ayuda</li>
+                <li>Foro de la comunidad</li>
+                <li>Eventos y capacitaciones</li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Empresa</h3>
+            <ul>
+                <li>Acerca de SeniorHelp</li>
+                <li>Política de privacidad</li>
+                <li>Términos de servicio</li>
+                <li>Prensa y noticias</li>
+                <li>Contactar con nosotros</li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Nota de respeto -->
+    <p class="nota-respeto">Se pide respeto por las personas adultas mayores y se sancionará cualquier acto que pueda dañar la moral o autoestima de nuestros expertos.</p>
 </body>
-
 </html>
