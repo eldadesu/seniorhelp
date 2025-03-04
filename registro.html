@@ -3,44 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Expertos - SeniorHelp</title>
+    <title>Registro como Experto Senior - SeniorHelp</title>
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; }
-        header { background: #3498DB; color: white; padding: 20px; text-align: center; }
-        .container { max-width: 600px; margin: auto; padding: 20px; }
-        label { display: block; margin: 10px 0 5px; font-weight: bold; }
-        input, select, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        header, .banner { background: url('ruta_de_tu_imagen.jpg') no-repeat center center/cover; color: white; padding: 20px; text-align: center; }
+        .container { max-width: 800px; margin: auto; padding: 20px; }
+        label { display: block; margin-top: 10px; }
+        input, textarea, select { width: 100%; padding: 8px; margin: 8px 0; }
         .button { display: inline-block; padding: 10px 20px; color: white; background: #3498DB; text-decoration: none; border-radius: 5px; cursor: pointer; }
         .button:hover { background: #2980B9; }
     </style>
 </head>
 <body>
     <header>
-        <h1>Regístrate como Experto</h1>
+        <h1>Registro como Experto Senior</h1>
+        <p>Únete a SeniorHelp y ofrece tus conocimientos y experiencia a quienes lo necesitan.</p>
     </header>
 
+    <div class="banner">¡Comparte tu experiencia y ayuda a otros! <a href="#registro-form" style="color: white;">Regístrate aquí</a></div>
+
     <div class="container">
-        <form action="procesar_registro.php" method="post">
-            <label for="nombre">Nombre Completo:</label>
+        <h2>Completa el formulario para unirte</h2>
+        <form id="registro-form" action="procesar_registro_experto.html" method="POST">
+            <label for="nombre">Nombre completo:</label>
             <input type="text" id="nombre" name="nombre" required>
 
-            <label for="correo">Correo Electrónico:</label>
-            <input type="email" id="correo" name="correo" required>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
 
-            <label for="telefono">Teléfono de Contacto:</label>
+            <label for="telefono">Teléfono:</label>
             <input type="tel" id="telefono" name="telefono" required>
 
-            <label for="especialidad">Especialidad:</label>
-            <input type="text" id="especialidad" name="especialidad" required>
+            <label for="especialidad">Área de experiencia:</label>
+            <select id="especialidad" name="especialidad" required>
+                <option value="finanzas">Servicios financieros</option>
+                <option value="consejos_familiares">Consejos familiares</option>
+                <option value="cocina_tradiciones">Cocina y tradiciones</option>
+                <option value="oficios_senior">Oficios prácticos (carpintería, albañilería, etc.)</option>
+                <option value="otro">Otro</option>
+            </select>
 
-            <label for="experiencia">Experiencia (años):</label>
-            <input type="number" id="experiencia" name="experiencia" required>
-
-            <label for="descripcion">Descripción de tus Servicios:</label>
+            <label for="descripcion">Describe tu experiencia y los servicios que ofreces:</label>
             <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
 
             <button type="submit" class="button">Enviar Registro</button>
         </form>
     </div>
+
+    <div class="banner">¡Comparte tu experiencia y ayuda a otros! <a href="#registro-form" style="color: white;">Regístrate aquí</a></div>
 </body>
 </html>
