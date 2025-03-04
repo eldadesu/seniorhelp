@@ -2,102 +2,96 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registro - SeniorHelp</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Expertos - SeniorHelp</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-        }
-        .banner {
-            width: 100%;
-            height: 300px;
-            background: url('img/banner.jpg') center/cover no-repeat;
             display: flex;
-            align-items: center;
             justify-content: center;
-            color: white;
-            text-align: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #f4f4f9;
         }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+        .registro-container {
             background: white;
+            padding: 2rem;
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
         }
-        h1, h2 {
+        h2 {
             text-align: center;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
         }
         label {
-            margin: 10px 0 5px;
-            font-weight: bold;
+            display: block;
+            margin: 0.5rem 0 0.2rem;
         }
-        input, select, textarea {
-            padding: 10px;
+        input, select, button {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
             border: 1px solid #ccc;
             border-radius: 8px;
-            font-size: 16px;
+            box-sizing: border-box;
         }
-        button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #2c3e50;
+        .btn-google {
+            background: #db4437;
             color: white;
-            font-size: 18px;
-            border: none;
-            border-radius: 8px;
             cursor: pointer;
         }
-        button:hover {
-            background-color: #34495e;
+        .btn-submit {
+            background: #1e73be;
+            color: white;
+            cursor: pointer;
+        }
+        .btn-submit:hover {
+            background: #155a8a;
         }
     </style>
 </head>
 <body>
-    <!-- Banner -->
-    <div class="banner">
-        <h1>Únete a SeniorHelp</h1>
+    <div class="registro-container">
+        <h2>Registro de Expertos</h2>
+
+        <!-- Inicio de sesión -->
+        <button class="btn-google">Registrarse con Google</button>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" placeholder="Ingresa tu correo" required>
+
+        <!-- Nombre de usuario -->
+        <label for="username">Nombre de Usuario:</label>
+        <input type="text" id="username" placeholder="Crea tu nombre de usuario" required onblur="verificarUsuario()">
+
+        <!-- Selección de área -->
+        <label for="area">Área de Especialización:</label>
+        <select id="area" required>
+            <option value="">Selecciona tu área</option>
+            <option value="finanzas">Servicios Financieros</option>
+            <option value="familia">Consejos Familiares</option>
+            <option value="cocina">Cocina y Tradiciones</option>
+            <option value="oficios">Oficios Senior</option>
+            <option value="otro">Otro</option>
+        </select>
+
+        <!-- Botón de envío -->
+        <button class="btn-submit" onclick="enviarRegistro()">Registrarse</button>
     </div>
 
-    <!-- Formulario de Registro -->
-    <div class="container">
-        <h2>Registro de Usuario</h2>
-        <form action="procesar_registro.php" method="POST">
-            <label for="nombre">Nombre Completo:</label>
-            <input type="text" id="nombre" name="nombre" required>
+    <script>
+        function verificarUsuario() {
+            const username = document.getElementById('username').value;
+            if (username) {
+                alert(`Verificando disponibilidad para: ${username}`);
+            }
+        }
 
-            <label for="correo">Correo Electrónico:</label>
-            <input type="email" id="correo" name="correo" required>
-
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" required>
-
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required>
-
-            <label for="servicio">Servicio de Interés:</label>
-            <select id="servicio" name="servicio" required>
-                <option value="financiero">Servicios Financieros</option>
-                <option value="familiares">Consejos Familiares</option>
-                <option value="cocina">Cocina y Tradiciones</option>
-                <option value="oficios">Oficios Senior</option>
-                <option value="otro">Otro</option>
-            </select>
-
-            <label for="comentarios">Comentarios Adicionales:</label>
-            <textarea id="comentarios" name="comentarios" rows="4"></textarea>
-
-            <button type="submit">Registrarse</button>
-        </form>
-    </div>
+        function enviarRegistro() {
+            alert('Registro enviado exitosamente.');
+        }
+    </script>
 </body>
 </html>
