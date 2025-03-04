@@ -3,76 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SeniorHelp - Conecta con Expertos</title>
+    <title>Bienvenido a SeniorHelp</title>
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; }
-        header { background: #3498DB; color: white; padding: 20px; text-align: center; }
-        nav { display: flex; justify-content: center; gap: 20px; padding: 10px; background: #2C3E50; }
-        nav a { color: white; text-decoration: none; padding: 5px 10px; }
-        nav a:hover { background: #1A252F; border-radius: 5px; }
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        .section { margin-bottom: 40px; }
+        header, .banner { background: url('ruta_de_tu_imagen.jpg') no-repeat center center/cover; color: white; padding: 20px; text-align: center; }
+        .container { max-width: 800px; margin: auto; padding: 20px; }
         .button { display: inline-block; padding: 10px 20px; color: white; background: #3498DB; text-decoration: none; border-radius: 5px; cursor: pointer; }
         .button:hover { background: #2980B9; }
-        input, select { width: 100%; padding: 8px; margin: 8px 0; }
-        .hero { position: relative; text-align: center; color: white; }
-        .hero img { width: 100%; height: auto; display: block; }
-        .hero-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-        .hero h1 { font-size: 3rem; margin: 0; }
-        .hero p { font-size: 1.2rem; margin: 10px 0; }
+        .categories { display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap; }
+        .categories a { text-decoration: none; color: #2C3E50; }
+        .categories a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
     <header>
-        <h1>SeniorHelp</h1>
+        <h1>Bienvenido a SeniorHelp</h1>
         <p>Conecta con personas mayores expertas en oficios prácticos, asesorías personalizadas y consejos de vida.</p>
     </header>
 
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="registro.html">Regístrate como Experto</a>
-        <a href="especialidades.html">Buscar Especialidades</a>
-    </nav>
+    <div class="banner">¡Conecta con expertos senior y encuentra soluciones personalizadas para tus proyectos! <a href="registro.html" style="color: white;">Regístrate aquí</a></div>
 
-    <!-- Sección Hero (Portada) -->
-    <div class="hero">
-        <img src="img/portada.jpg" alt="Portada SeniorHelp">
-        <div class="hero-text">
-            <h1>Conecta con Expertos Senior</h1>
-            <p>Experiencia a tu alcance en cada llamada o proyecto.</p>
-            <a href="registro.html" class="button">Únete como Experto</a>
+    <div class="container">
+        <h2>Explora los servicios disponibles:</h2>
+        <div class="categories">
+            <a href="registro.html">Servicios financieros</a>
+            <a href="registro.html">Consejos familiares</a>
+            <a href="registro.html">Cocina y tradiciones</a>
+            <a href="registro.html">Oficios senior</a>
+            <a href="registro.html">Otro</a>
         </div>
     </div>
 
-    <div class="container">
-        <section class="section">
-            <h2>🌟 ¿Cómo Funciona?</h2>
-            <p><strong>Para Clientes:</strong> Encuentra asesorías rápidas de expertos en diferentes áreas y paga por minuto u hora.</p>
-            <p><strong>Para Empresas:</strong> Contrata talento senior para proyectos específicos o colaboraciones a largo plazo.</p>
-            <p><strong>Regulación de Comportamiento y Pagos:</strong> Los clientes deben tratar a los expertos con respeto en todo momento. Los pagos se realizan por adelantado y se retienen hasta que ambas partes confirmen la finalización del servicio.</p>
-        </section>
-
-        <section class="section">
-            <h2>👨‍🏫 Únete como Experto</h2>
-            <p>Si tienes experiencia en un área específica y deseas ofrecer tus servicios, ¡únete a SeniorHelp y comparte tu conocimiento!</p>
-            <a href="registro.html" class="button">Registrarse como Experto</a>
-        </section>
-
-        <section class="section">
-            <h2>🔍 Buscar Especialidades</h2>
-            <p>Encuentra expertos en diferentes áreas buscando por especialidad:</p>
-            <input type="text" placeholder="Buscar por especialidad..." id="searchInput">
-            <button class="button" onclick="searchSpecialties()">Buscar</button>
-        </section>
-
-    </div>
-
-    <script>
-        function searchSpecialties() {
-            const query = document.getElementById('searchInput').value;
-            alert('Buscando: ' + query);
-            // Aquí puedes agregar lógica para realizar la búsqueda en el futuro.
-        }
-    </script>
+    <div class="banner">¡Conecta con expertos senior y encuentra soluciones personalizadas para tus proyectos! <a href="registro.html" style="color: white;">Regístrate aquí</a></div>
 </body>
 </html>
