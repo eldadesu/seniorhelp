@@ -12,9 +12,22 @@
             overflow-x: hidden;
         }
         .banner {
-            background: #f4f4f9;
+            background: #1e73be;
             text-align: center;
             padding: 2rem 1rem;
+            color: white;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            background: #2c3e50;
+            padding: 1rem;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
         }
         .portada {
             position: relative;
@@ -61,6 +74,18 @@
         .btn-portada:hover {
             background-color: #ddd;
         }
+        .servicios {
+            text-align: center;
+            padding: 2rem;
+        }
+        .servicios ul {
+            list-style: none;
+            padding: 0;
+        }
+        .servicios ul li {
+            display: inline;
+            margin: 0 1rem;
+        }
         .footer {
             display: flex;
             justify-content: space-around;
@@ -84,6 +109,13 @@
         <h1>Bienvenido a SeniorHelp</h1>
         <p>Conecta con personas mayores expertas en oficios prácticos, asesorías personalizadas y consejos de vida.</p>
     </header>
+
+    <!-- Navegación -->
+    <nav class="nav-links">
+        <a href="#">Inicio</a>
+        <a href="#">Regístrate como Experto</a>
+        <a href="#">Buscar Especialidades</a>
+    </nav>
 
     <!-- Portada -->
     <section class="portada">
