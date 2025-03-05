@@ -2,79 +2,125 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SeniorHelp</title>
+    <title>SeniorHelp - Inicio</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            overflow-x: hidden;
         }
-
-        .header {
+        .banner {
+            background: #1e73be;
             text-align: center;
-            padding: 50px;
-            background: url('tu-imagen-de-portada.jpg') no-repeat center center/cover;
+            padding: 2rem 1rem;
             color: white;
         }
-
-        nav {
+        .nav-container {
+            position: relative;
+            top: -50px;
+        }
+        .nav-links {
             display: flex;
             justify-content: center;
-            background-color: #4A4A4A;
-            padding: 10px 0;
+            gap: 2rem;
+            background: #2c3e50;
+            padding: 1rem;
         }
-
-        nav a {
+        .nav-links a {
             color: white;
             text-decoration: none;
-            margin: 0 20px;
             font-weight: bold;
         }
-
-        nav a:hover {
-            text-decoration: underline;
+        .dropdown {
+            position: relative;
         }
-
-        .section-title {
-            font-family: 'Georgia', serif;
-            font-size: 24px;
-            margin-top: 40px;
-            margin-bottom: 10px;
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #34495e;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
         }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
-
-        li {
-            margin: 5px 0;
+        .portada {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
         }
-
-        .content {
-            padding: 20px;
+        .portada::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('img/portada.jpg') no-repeat center center/cover;
+            z-index: -1;
+        }
+        .portada-contenido {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 800px;
+        }
+        .btn-portada {
+            padding: 1rem 2.5rem;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn-portada:hover {
+            background-color: #ddd;
         }
     </style>
 </head>
 <body>
-
-    <div class="header">
+    <header class="banner">
         <h1>Bienvenido a SeniorHelp</h1>
-        <p>Conecta con expertos senior para asesorías personalizadas.</p>
+        <p>Conecta con personas mayores expertas en oficios prácticos, asesorías personalizadas y consejos de vida.</p>
+    </header>
+
+    <div class="nav-container">
+        <nav class="nav-links">
+            <a href="#">Inicio</a>
+            <a href="#" onclick="window.open('registro.html', '_blank')">Regístrate como Experto</a>
+            <a href="#" onclick="window.open('registro_cliente.html', '_blank')">Regístrate como Cliente</a>
+            <div class="dropdown">
+                <a href="#">Servicios</a>
+                <div class="dropdown-content">
+                    <a href="#">Servicios financieros</a>
+                    <a href="#">Consejos familiares</a>
+                    <a href="#">Cocina y tradiciones</a>
+                    <a href="#">Oficios senior</a>
+                    <a href="#">Otro</a>
+                </div>
+            </div>
+            <a href="#" onclick="window.open('login.html', '_blank')">Iniciar Sesión</a>
+        </nav>
     </div>
 
-    <nav>
-        <a href="#categorias">Categorías</a>
-        <a href="#clientes">Para los clientes</a>
-        <a href="#expertos">Para expertos</a>
-        <a href="#empresa">Empresa</a>
-    </nav>
+    <section class="portada">
+        <div class="portada-contenido">
+            <h1>Conecta con Expertos Senior</h1>
+            <p>Experiencia a tu alcance en cada llamada o proyecto.</p>
+            <a href="#" class="btn-portada" onclick="window.open('registro.html', '_blank')">Únete como Experto</a>
+        </div>
+    </section>
 
-    <div class="content">
-        <div id="categorias">
-            <h2 class="section-title">Categorías</h2>
+    <footer class="footer">
+        <div class="footer-column">
+            <h3>Categorías</h3>
             <ul>
                 <li>Servicios financieros</li>
                 <li>Consejos familiares</li>
@@ -83,9 +129,8 @@
                 <li>Otro</li>
             </ul>
         </div>
-
-        <div id="clientes">
-            <h2 class="section-title">Para los clientes</h2>
+        <div class="footer-column">
+            <h3>Para los clientes</h3>
             <ul>
                 <li>Cómo funciona SeniorHelp</li>
                 <li>Historias de éxito</li>
@@ -94,9 +139,8 @@
                 <li>Soporte</li>
             </ul>
         </div>
-
-        <div id="expertos">
-            <h2 class="section-title">Para expertos</h2>
+        <div class="footer-column">
+            <h3>Para expertos</h3>
             <ul>
                 <li>Únete como experto</li>
                 <li>Programa de apoyo</li>
@@ -105,9 +149,8 @@
                 <li>Eventos y capacitaciones</li>
             </ul>
         </div>
-
-        <div id="empresa">
-            <h2 class="section-title">Empresa</h2>
+        <div class="footer-column">
+            <h3>Empresa</h3>
             <ul>
                 <li>Acerca de SeniorHelp</li>
                 <li>Política de privacidad</li>
@@ -116,7 +159,7 @@
                 <li>Contactar con nosotros</li>
             </ul>
         </div>
-    </div>
-
+    </footer>
+    <p class="nota-respeto">Se pide respeto por las personas adultas mayores y se sancionará cualquier acto que pueda dañar la moral o autoestima de nuestros expertos.</p>
 </body>
 </html>
